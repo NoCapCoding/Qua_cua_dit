@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kirsten Daphne</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://media.tenor.com/mcpNuaDanYwAAAAi/duck-ducky.gif" alt="duck-ducky" class="duck" />
+        <div class="wrapper">
+            <form action="">
+                <h1 class="title">Register</h1>
+
+                <div class="input-box-row">
+                    <div class="input-box-group">
+                        <div class="input-box">
+                            <input type="text" id="firstname" placeholder="" required />
+                            <label for="firstname">First Name</label>
+                        </div>
+                    </div>
+
+                    <div class="input-box-group">
+                        <div class="input-box">
+                            <input type="text" id="lastname" placeholder="" required />
+                            <label for="lastname">Last Name</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-box-row">
+                    <div class="input-box-group">
+                        <div class="input-box">
+                            <input type="email" id="email" placeholder="" required />
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+
+                    <div class="input-box-group">
+                        <div class="input-box">
+                            <input type="text" pattern="[0-9]{11}" id="phone" placeholder="" required />
+                            <label for="phone">Phone</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-box-single">
+                    <div class="input-box">
+                        <input type="text" id="address" placeholder="" required />
+                        <label for="address">Address</label>
+                    </div>
+                </div>
+
+                <div class="input-box-row">
+                    <div class="input-box-group date-input">
+                        <div class="input-box">
+                            <input type="text" id="dateofbirth" placeholder="" onblur="(this.type='text')" onfocus="(this.type='date')" required />
+                            <label for="dateofbirth">Date of Birth</label>
+                        </div>
+                    </div>
+
+                    <div class="input-box-group">
+                        <div class="input-box">
+                            <input type="text" id="position" placeholder="" required />
+                            <label for="position">Position</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-box-row">
+                    <div class="input-box-group">
+                        <div class="input-box">
+                            <select name="department" id="department" required>
+                                <option value="" disabled selected></option>
+                                <option value="Development">Development</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Administration">Administration</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Design">Design</option>
+                            </select>
+                            <label for="department">Department</label>
+                        </div>
+                    </div>
+
+                    <div class="input-box-group">
+                        <div class="input-box">
+                            <input type="text" pattern="[0-9]{9}" id="employeeid" placeholder="" required />
+                            <label for="employeeid">Employee ID</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-box-row">
+                    <div class="input-box-group date-input">
+                        <div class="input-box">
+                            <input type="text" id="jopiningdate" placeholder="" onblur="(this.type='text')" onfocus="(this.type='date')" required />
+                            <label for="jopiningdate">Joining Date</label>
+                        </div>
+                    </div>
+
+                    <div class="input-box-group">
+                        <div class="input-box salary-input">
+                            <span class="currency-symbol">₱</span>
+                            <input type="text" pattern="[0-9,.]{1,}" id="salary" placeholder="" required />
+                            <label for="salary">Salary</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-box-row">
+                    <div class="input-box-group">
+                        <div class="input-box">
+                            <input type="text" id="supervisor" placeholder="" required />
+                            <label for="supervisor">Supervisor</label>
+                        </div>
+                    </div>
+
+                    <div class="input-box-group">
+                        <div class="input-box">
+                            <input type="text" id="emername" placeholder="" required />
+                            <label for="emername">Emergency - Person</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-box-row">
+                    <div class="input-box-group">
+                        <div class="input-box">
+                            <input type="text" id="emerrel" placeholder="" required />
+                            <label for="emerrel">Emergency - Relation</label>
+                        </div>
+                    </div>
+
+                    <div class="input-box-group">
+                        <div class="input-box">
+                            <input type="text" id="emernumber" placeholder="" required />
+                            <label for="emernumber">Emergency - Number</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-box-span">
+                    <div class="input-box">
+                        <textarea id="educqual" placeholder="" required></textarea>
+                        <label for="educqual">Educational Qualification</label>
+                    </div>
+                </div>
+
+                <div class="input-box-span">
+                    <div class="input-box">
+                        <textarea id="prevexp" placeholder="" required></textarea>
+                        <label for="prevexp">Previous Experience</label>
+                    </div>
+                </div>
+
+                <div class="input-box-span">
+                    <div class="input-box">
+                        <textarea id="skills" placeholder="" required></textarea>
+                        <label for="skills">Skills</label>
+                    </div>
+                </div>
+
+                <div class="input-box-row">
+                    <div class="input-box-group">
+                        <div class="input-box">
+                            <input type="text" id="languages" placeholder="" required />
+                            <label for="languages">Languages</label>
+                        </div>
+                    </div>
+
+                    <div class="input-box-group">
+                        <div class="input-box">
+                            <input type="text" id="certification" placeholder="" required />
+                            <label for="certification">Certification</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-box-row">
+                    <div class="input-box-radio">
+                        <input type="radio" id="box1" name="options" class="radio-input">
+                        <label for="box1" class="options radio-option-1"></label>
+                        <span class="gender-symbol">He/Him</span>
+                        <label for="box1" class="radio-label">Male</label>
+                    </div>
+                    <div class="input-box-radio">                        
+                        <input type="radio" id="box2" name="options" class="radio-input">
+                        <label for="box2" class="options radio-option-2"></label>
+                        <span class="gender-symbol">She/Her</span>
+                        <label for="box2" class="radio-label">Female</label>
+                    </div>
+                    <div class="input-box-radio">
+                        <input type="radio" id="box3" name="options" class="radio-input">
+                        <label for="box3" class="options radio-option-3"></label>
+                        <span class="gender-symbol">They/Them</span>
+                        <label for="box3" class="radio-label">Other</label>
+                    </div>
+                </div>
+
+                <div class="input-box-row">
+                    <div class="input-box-group">
+                        <div class="input-box">
+                            <input type="password" id="password" placeholder="" required />
+                            <label for="password">Password</label>
+                            <i class="bx bxs-lock-alt"></i>
+                        </div>
+                    </div>
+
+                    <div class="input-box-group">
+                        <div class="input-box">
+                            <input type="password" id="confrimpassword" placeholder="" required />
+                            <label for="confrimpassword">Confirm</label>
+                            <i class="bx bxs-lock-alt"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tos">
+                    <p>Agree to the Wabwab's <a href="#"> T&S and Privacy Policy</a></p>
+                </div>
+
+                <div class="input-box-single">
+                  <div class="input-box">
+                    <button type="submit" class="btn">Register</button>
+                  </div>
+                </div>
+
+                <div class="register-link">
+                    <p>Already have an account?<a href="login.html">Login</a></p>
+                </div>
+            </form>
+            <p class="copyright">© 2024 Kirsten Daphne</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,528 @@
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+/* Apply Global Styles to all Elements */
+* {
+    margin: 0;                                                              /* Remove default margin for all elements */
+    padding: 0;                                                             /* Remove default padding for all elements */
+    box-sizing: border-box;                                                 /* Set the box model to border-box for all elements */
+    font-family: "Poppins", sans-serif;                                     /* Set the font family to Poppins, with a fallback to sans-serif */
+}
+
+/* Body and Background */
+
+body {
+    display: flex;                                                          /* Use Flexbox layout to enable flexible box model */
+    justify-content: center;                                                /* Center child elements horizontally */
+    align-items: center;                                                    /* Center child elements vertically */
+    min-height: 100vh;                                                      /* Set the minimum height to 100% of the viewport height */
+    background: url("img.jpg") no-repeat center center/cover;               /* Set the background image to cover the entire area, centered without repeating */
+}
+
+/* Container */
+
+.container {
+    position: relative;                                                     /* Set the position to relative, allowing absolute positioning of child elements if needed */
+    width: 600px;                                                           /* Set the fixed width of the container to 600 pixels */
+    padding: 100px 0;                                                       /* Add 100 pixels of padding to the top and bottom, and no padding on the left and right */
+}
+
+
+.duck {
+    position: absolute;                                                     /* Set the position to absolute, allowing it to be positioned relative to the nearest positioned ancestor */
+    top: 23px;                                                              /* Position the top edge 23 pixels from the top of the containing element */
+    left: -5px;                                                             /* Position the left edge 5 pixels from the left of the containing element */
+    width: 100px;                                                           /* Set the width of the duck element to 100 pixels */
+    height: 100px;                                                          /* Set the height of the duck element to 100 pixels */
+    z-index: 10;                                                            /* Set the stacking order to 10, ensuring it appears above elements with a lower z-index */
+}
+
+/* Wrapper, Form, & Header */
+
+.wrapper {
+    width: 600px;                                                           /* Set the width of the wrapper to 600 pixels */
+    background: linear-gradient(0deg, #29759b4a, #00000000);           /* Apply a linear gradient background from a semi-transparent teal to transparent */
+    border: 2px solid rgba(255, 255, 255, 0.2);                          /* Add a 2px solid border with a semi-transparent white color */
+    backdrop-filter: blur(50px);                                           /* Apply a 50px blur effect to the background behind the wrapper */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);                             /* Create a subtle shadow effect around the wrapper */
+    color: #fff;                                                         /* Set the text color to white */
+    border-radius: 15px;                                                   /* Give the wrapper rounded corners with a radius of 15px */
+    padding: 30px 0px;                                                     /* Add 30 pixels of padding to the top and bottom, and no padding on the left and right */
+}
+
+.wrapper form {
+    padding: 0px 30px 0px 30px;                                            /* Add 30 pixels of padding to the left and right, with no padding on the top and bottom */
+  }
+
+ .wrapper form h1 {
+    font-size: 36px;                                                       /* Set the font size of the h1 element to 36 pixels */
+    text-align: center;                                                    /* Center the text within the h1 element */
+    text-shadow: 2px 2px 17px rgb(104, 149, 186);                        /* Apply a text shadow for a soft glow effect */
+}
+
+.wrapper form .title {
+    font-size: 35px;                                                       /* Set the font size of the title element to 35 pixels */
+    font-weight: 600;                                                      /* Set the font weight to 600 (bold) for emphasis */
+    text-align: center;                                                    /* Center the text within the title element */
+    color: #fff;                                                         /* Set the text color to white */
+    user-select: none;                                                     /* Prevent text selection for this element */
+    margin-bottom: 1.5rem;                                                 /* Add a bottom margin of 1.5rem to space it from the following element */
+}
+
+/* Input Box - Standard Types */
+
+.wrapper form .input-box-single {
+    position: relative;                                                    /* Set the position to relative for child elements to position themselves absolutely if needed */
+    width: 100%;                                                           /* Make the input box take the full width of its parent container */
+    padding-right: 9px;                                                    /* Add 9 pixels of padding to the right */
+    padding-left: 9px;                                                     /* Add 9 pixels of padding to the left */
+}
+
+.wrapper form .input-box-row {
+    display: -ms-flexbox;                                                  /* Enable Flexbox layout for older versions of Internet Explorer */
+    display: flex;                                                         /* Use Flexbox layout for modern browsers */
+    -ms-flex-wrap: wrap;                                                   /* Enable flex item wrapping for older versions of Internet Explorer */
+    flex-wrap: wrap;                                                       /* Allow flex items to wrap onto multiple lines */
+    margin-right: -5px;                                                    /* Apply negative margin to the right to offset padding in child elements */
+    margin-left: -5px;                                                     /* Apply negative margin to the left to offset padding in child elements */
+}
+
+.wrapper form .input-box-group {
+    display: -ms-flexbox;                                                  /* Enable Flexbox layout for older versions of Internet Explorer */
+    display: flex;                                                         /* Use Flexbox layout for modern browsers */
+    -ms-flex-flow: row wrap;                                               /* Enable row wrapping for older versions of Internet Explorer */
+    flex-flow: row wrap;                                                   /* Allow flex items to flow in rows and wrap */
+    -ms-flex-align: center;                                                /* Center align flex items for older versions of Internet Explorer */
+    align-items: center;                                                   /* Center align flex items vertically */
+    position: relative;                                                    /* Set the position to relative for positioning child elements */
+    width: 50%;                                                            /* Set the width of the group to 50% of the parent container */
+    padding-right: 15px;                                                   /* Add 15 pixels of padding to the right */
+    padding-left: 15px;                                                    /* Add 15 pixels of padding to the left */
+    -ms-flex: 0 0 50%;                                                     /* Set flex properties for older versions of Internet Explorer */
+    flex: 0 0 50%;                                                         /* Set flex properties to prevent growth and shrinkage, maintaining 50% width */
+}
+
+.wrapper form .input-box-span {
+    position: relative;                                                    /* Set the position to relative for child elements to position themselves absolutely if needed */
+    width: 100%;                                                           /* Make the input box span take the full width of its parent container */
+    padding-right: 9px;                                                    /* Add 9 pixels of padding to the right */
+    padding-left: 9px;                                                     /* Add 9 pixels of padding to the left */
+    height: 150px;                                                         /* Set the height of the input box span to 150 pixels */
+}
+
+/* Form - Select Tag */
+
+.wrapper form select {
+    width: 100%;                                                            /* Set the width of the select element to fill 100% of the container */
+    height: 50px;                                                           /* Set the height of the select element to 50px */
+
+    font-size: 16px;                                                        /* Set the font size of the text inside the select element to 16px */
+    color: #ffffffca;                                                     /* Set the color of the text inside the select element to a semi-transparent white */
+    background: transparent;                                                /* Make the background transparent */
+    outline: none;                                                          /* Remove the default outline that appears on focus */
+    border: none;                                                           /* Remove the default border of the select element */
+    border: 2px solid rgba(255, 255, 255, 0.2);                           /* Add a custom border with a 2px solid line and a semi-transparent white color */
+    border-radius: 15px;                                                    /* Give the select element rounded corners with a radius of 15px */
+
+    padding-left: 20px;                                                     /* Add 20px padding to the left side of the select element */
+    padding-right: 20px;                                                    /* Add 20px padding to the right side of the select element */
+
+    transition: all 0.3s ease;                                              /* Add a smooth transition effect on all properties when the select element is interacted with */
+
+    appearance: none;                                                       /* This is the standard property used to disable the default UI styling of form elements (like the dropdown arrow in a <select> element) */
+    -webkit-appearance: none;                                               /* This is the browser-specific prefix for WebKit-based browsers like Chrome and Safari. */
+    -moz-appearance: none;                                                  /* This is the browser-specific prefix for Mozilla-based browsers like Firefox. */
+  }
+
+.wrapper form select option {
+    background: #50c8c4;                                                  /* Set the background color of the select options to a teal shade */
+    color: #ffda55;                                                       /* Set the text color of the select options to a yellow shade */
+}
+
+.wrapper form select::after {
+    content: '\25BC';                                                       /* Add a down arrow character as content after the select element */
+    position: absolute;                                                     /* Position the arrow absolutely relative to the select element */
+    right: 20px;                                                            /* Position the arrow 20 pixels from the right edge of the select element */
+    top: 50%;                                                               /* Position the arrow in the vertical center of the select element */
+    transform: translateY(-50%);                                            /* Adjust the vertical position to perfectly center the arrow */
+    font-size: 16px;                                                        /* Set the font size of the arrow to 16 pixels */
+    color: #fff;                                                          /* Set the color of the arrow to white */
+}
+
+.wrapper form select:focus {
+    border: 2px solid rgba(255, 255, 255, 0.8);                           /* Change the border color to a semi-transparent white when focused */
+    transition: border-color 0.3s ease;                                     /* Smoothly transition the border color change over 0.3 seconds */
+}
+
+/* Form - Input Box */
+
+.wrapper form .input-box {
+  width: 100%;                                                              /* The input box will occupy the full width of the parent container */
+  height: 50px;                                                             /* Set the height of the input box to 50 pixels */
+  position: relative;                                                       /* Set relative positioning to allow for absolute positioning of inner elements */
+  margin-bottom: 1.5rem;                                                    /* Add a bottom margin of 1.5rem to space out the input boxes */
+}
+
+.wrapper form .input-box input:focus,
+.wrapper form .input-box input:valid,
+.wrapper form .input-box select:focus,
+.wrapper form .input-box select:valid,
+.wrapper form .input-box textarea:focus,
+.wrapper form .input-box textarea:valid {
+  border: 2px solid rgba(255, 255, 255, 0.8);                             /* Change the border color to semi-transparent white when focused or valid */
+  transition: border-color 0.3s ease;                                       /* Smoothly transition the border color change over 0.3 seconds */
+}
+
+.wrapper form .input-box label {
+  position: absolute;                                                       /* Position the label absolutely within the input box */
+  top: 50%;                                                                 /* Vertically center the label within the input box */
+  left: 20px;                                                               /* Position the label 20 pixels from the left side */
+  color: #ffffff;                                                         /* Set the label text color to white */
+  font-weight: 400;                                                         /* Set the font weight to 400 (normal weight) */
+  font-size: 17px;                                                          /* Set the font size to 17 pixels */
+  pointer-events: none;                                                     /* Prevent the label from being interacted with (clicks, hovers, etc.) */
+  transform: translateY(-50%);                                              /* Adjust vertical alignment to perfectly center the label */
+  transition: all 0.3s ease;                                                /* Smoothly transition all properties over 0.3 seconds */
+}
+
+.wrapper form .input-box input:focus ~ label,
+.wrapper form .input-box input:not(:placeholder-shown) ~ label,
+.wrapper form .input-box select:focus ~ label,
+.wrapper form .input-box select:valid ~ label,
+.wrapper form .input-box textarea:focus ~ label,
+.wrapper form .input-box textarea:valid ~ label {
+  top: 0%;                                                                  /* Move the label to the top of the input box */
+  font-size: 16px;                                                          /* Reduce the font size to 16 pixels */
+  color: #ffffff;                                                         /* Keep the label color white */
+  background: #50c8c4;                                                    /* Apply a teal background color to the label when focused or valid */
+  border-radius: 5px;                                                       /* Round the corners of the label with a 5-pixel radius */
+  padding: 2px 5px 2px 5px;                                                 /* Add padding around the label text for spacing */
+  transform: translateY(-60%);                                              /* Adjust the label position to rise above the input */
+}
+
+
+.wrapper form .input-box input:invalid:not(:placeholder-shown) ~ label {
+  top: 0%;                                                                  /* Move the label to the top of the input box if the input is invalid */
+  font-size: 16px;                                                          /* Reduce the font size to 16 pixels */
+  color: #ffffff;                                                         /* Keep the label color white */
+  background: #c85090;                                                    /* Set the label background color to a pinkish-red when input is invalid */
+  border-radius: 5px;                                                       /* Add rounded corners to the label */
+  padding: 2px 5px;                                                         /* Add padding around the label text */
+  transform: translateY(-60%);                                              /* Adjust the label's vertical position above the input */
+}
+
+.wrapper form .input-box input {
+  width: 100%;                                                              /* The input field takes up the full width of the container */
+  height: 100%;                                                             /* The input field matches the height of its container */
+  background: transparent;                                                  /* Set the background of the input to transparent */
+  border: none;                                                             /* Remove any default border */
+  outline: none;                                                            /* Remove the default outline when the input is focused */
+  border: 2px solid rgba(255, 255, 255, 0.2);                             /* Add a subtle semi-transparent white border */
+  font-size: 16px;                                                          /* Set the font size of the input text to 16 pixels */
+  color: #fff;                                                            /* Set the text color to white */
+  padding-left: 20px;                                                       /* Add padding of 20 pixels to the left for the text inside the input */
+  padding-right: 20px;                                                      /* Add padding of 20 pixels to the right for the text inside the input */
+  border-radius: 15px;                                                      /* Round the corners of the input box */
+  transition: all 0.3s ease;                                                /* Apply a smooth transition to all properties over 0.3 seconds */
+}
+
+.input-box i {
+  position: absolute;                                                       /* Position the icon absolutely within the input box */
+  right: 20px;                                                              /* Position the icon 20 pixels from the right side of the input box */
+  top: 25px;                                                                /* Align the icon vertically 25 pixels from the top of the input box */
+  transform: translateY(-50%);                                              /* Vertically center the icon */
+  font-size: 20px;                                                          /* Set the size of the icon to 20 pixels */
+  color: #fff;                                                            /* Set the icon color to white */
+}
+
+/* Input Box - Textarea */
+
+.wrapper form .input-box textarea {
+  width: 100%;                                                              /* The textarea takes up the full width of the container */
+  height: 250%;                                                             /* Set the height of the textarea to 250% of its container */
+  background: transparent;                                                  /* Set the background to transparent */
+  border: none;                                                             /* Remove any default border */
+  outline: none;                                                            /* Remove the default focus outline */
+  border: 2px solid rgba(255, 255, 255, 0.2);                             /* Add a semi-transparent white border */
+  font-size: 16px;                                                          /* Set the font size of the text to 16 pixels */
+  color: #fff;                                                            /* Set the text color to white */
+  padding: 11px 20px;                                                       /* Add padding of 11px top/bottom and 20px left/right for text inside */
+  border-radius: 15px;                                                      /* Round the corners of the textarea */
+  transition: all 0.3s ease;                                                /* Smoothly transition all properties over 0.3 seconds */
+  box-sizing: border-box;                                                   /* Include padding and borders in the element's width and height */
+  overflow: auto;                                                           /* Enable scrolling if the content overflows */
+  resize: none;                                                             /* Disable the ability to resize the textarea */
+  scrollbar-width: none;                                                    /* Hide the scrollbar for Firefox */
+  -ms-overflow-style: none;                                                 /* Hide the scrollbar for Internet Explorer */
+}
+
+textarea::-webkit-scrollbar {
+  display: none;                                                            /* Hide the scrollbar for WebKit browsers (Chrome, Safari) */
+}
+
+/* Input Box - Date */
+
+.date-input input::-webkit-calendar-picker-indicator {
+  display: none;                                                            /* Hide the default date picker icon in WebKit browsers */
+  margin: 0;                                                                /* Remove any margin around the hidden picker */
+}
+
+/* Input Box - Salary */
+
+.wrapper form .input-box.salary-input input {
+  padding-left: 35px;                                                       /* Add extra padding to the left to make space for the currency symbol */
+}
+
+.currency-symbol {
+  position: absolute;                                                       /* Position the currency symbol absolutely within the input box */
+  left: 20px;                                                               /* Position the symbol 20px from the left side */
+  top: 50%;                                                                 /* Vertically center the symbol */
+  transform: translateY(-50%);                                              /* Fine-tune vertical centering */
+  pointer-events: none;                                                     /* Disable interactions with the currency symbol */
+  color: #ffffff;                                                         /* Set the currency symbol color to white */
+  opacity: 0;                                                               /* Initially, the symbol is invisible */
+  transition: opacity 0.2s ease;                                            /* Smoothly transition the opacity over 0.2 seconds */
+}
+
+.input-box:has(input:focus) .currency-symbol,
+.input-box:has(input:not(:placeholder-shown)) .currency-symbol {
+  opacity: 1;                                                               /* Make the currency symbol visible when the input is focused or not empty */
+}
+
+
+/* Input Box - Radio Buttons */
+
+.wrapper form .input-box-radio {
+  height: 50px;                                                             /* Set the height of the radio input box to 50px */
+  margin-bottom: 1.5rem;                                                    /* Add space below each radio input */
+  display: -ms-flexbox;                                                     /* Use flexbox for layout in Internet Explorer */
+  display: flex;                                                            /* Use flexbox layout for other browsers */
+  -ms-flex-flow: row wrap;                                                  /* Set the flex direction to row and allow wrapping in IE */
+  flex-flow: row wrap;                                                      /* Set the flex direction to row and allow wrapping */
+  -ms-flex-align: center;                                                   /* Vertically align items to the center in Internet Explorer (IE) */
+  align-items: center;                                                      /* Vertically center align the flex items */
+  position: relative;                                                       /* Position elements relative to this container */
+  width: 50%;                                                               /* Set the width of the radio input box to 50% of the container */
+  padding-right: 15px;                                                      /* Add 15px padding to the right */
+  padding-left: 15px;                                                       /* Add 15px padding to the left */
+  -ms-flex: 0 0 33.333333%;                                                 /* In IE, set the flex-basis to 33.333% and don't allow shrinking or growing */
+  flex: 0 0 33.333333%;                                                     /* Set the flex-basis to 33.333%, taking up one-third of the row */
+  max-width: 33.333333%;                                                    /* Set the maximum width to 33.333%, ensuring no more space is taken */
+}
+
+.wrapper form .input-box-radio .options {
+  width: 100%;                                                              /* The radio options take up the full width of the container */
+  height: 100%;                                                             /* The radio options match the height of the container */
+  background: transparent;                                                  /* Set the background to transparent */
+  border: none;                                                             /* Remove any default borders */
+  outline: none;                                                            /* Remove the default outline when focused */
+  border: 2px solid rgba(255, 255, 255, 0.2);                             /* Add a semi-transparent white border */
+  font-size: 16px;                                                          /* Set the font size of the radio option text to 16px */
+  color: #fff;                                                            /* Set the text color to white */
+  border-radius: 15px;                                                      /* Round the corners of the radio options */
+  transition: all 0.3s ease;                                                /* Apply a smooth transition to all properties over 0.3 seconds */
+}
+
+.wrapper form .input-box-radio .radio-label {
+  position: absolute;                                                       /* Position the label absolutely within the input box */
+  top: 50%;                                                                 /* Position the label vertically at 50% of the container's height */
+  left: 35px;                                                               /* Position the label 35px from the left */
+  color: #ffffff;                                                         /* Set the text color to white */
+  font-weight: 400;                                                         /* Set the font weight to normal (400) */
+  font-size: 17px;                                                          /* Set the font size of the label to 17px */
+  pointer-events: none;                                                     /* Disable interactions with the label (clicks will go to the radio button) */
+  transform: translateY(-50%);                                              /* Vertically center the label by translating it upwards by 50% */
+  transition: all 0.3s ease;                                                /* Apply a smooth transition to the label's properties */
+}
+
+.wrapper form .radio-input {
+  display: none;                                                            /* Hides the radio input element itself (custom styles will be applied) */
+}
+
+.wrapper form .radio-input:checked + .options.radio-option-1 ~ .radio-label {
+  top: 0%;                                                                  /* Move the label to the top of the container */
+  font-size: 16px;                                                          /* Set the font size to 16px */
+  color: #ffffff;                                                         /* Change the label text color to white */
+  background: #50c8c4;                                                    /* Set the label background color to cyan (#50c8c4) */
+  border-radius: 5px;                                                       /* Apply rounded corners to the label */
+  padding: 2px 5px 2px 5px;                                                 /* Add padding around the label */
+  transform: translateY(-60%);                                              /* Slightly move the label upwards to fit the new position */
+}
+
+.wrapper form .radio-input:checked + .options.radio-option-2 ~ .radio-label {
+  top: 0%;                                                                  /* Move the label to the top of the container */
+  font-size: 16px;                                                          /* Set the font size to 16px */
+  color: #ffffff;                                                         /* Change the label text color to white */
+  background: #50c8c4;                                                    /* Set the label background color to cyan (#50c8c4) */
+  border-radius: 5px;                                                       /* Apply rounded corners to the label */
+  padding: 2px 5px 2px 5px;                                                 /* Add padding around the label */
+  transform: translateY(-60%);                                              /* Slightly move the label upwards to fit the new position */
+}
+
+.wrapper form .radio-input:checked + .options.radio-option-3 ~ .radio-label {
+  top: 0%;                                                                  /* Move the label to the top of the container */
+  font-size: 16px;                                                          /* Set the font size to 16px */
+  color: #ffffff;                                                         /* Change the label text color to white */
+  background: #50c8c4;                                                    /* Set the label background color to cyan (#50c8c4) */
+  border-radius: 5px;                                                       /* Apply rounded corners to the label */
+  padding: 2px 5px 2px 5px;                                                 /* Add padding around the label */
+  transform: translateY(-60%);                                              /* Slightly move the label upwards to fit the new position */
+}
+
+.wrapper form .input-box-radio .gender-symbol {
+  position: absolute;                                                       /* Position the gender symbol absolutely inside the input box */
+  left: 35px;                                                               /* Place the symbol 35px from the left */
+  top: 50%;                                                                 /* Vertically center the symbol */
+  transform: translateY(-50%);                                              /* Adjust the vertical alignment of the symbol */
+  pointer-events: none;                                                     /* Prevent the symbol from interfering with user interactions */
+  color: #ffffff;                                                         /* Set the symbol color to white */
+  opacity: 0;                                                               /* Initially hide the symbol */
+  transition: opacity 0.2s ease;                                            /* Smoothly transition the opacity when the symbol becomes visible */
+}
+
+
+.wrapper form .radio-input:checked ~ .gender-symbol {
+  opacity: 1;                                                               /* Shows the gender symbol when the corresponding radio button is checked */
+}
+
+/* Footer */
+
+.tos {
+  padding-top: 10px;                                                        /* Adds 10px padding to the top of the terms of service section */
+  display: flex;                                                            /* Enables flexbox layout for the terms of service container */
+  justify-content: center;                                                  /* Horizontally centers the content */
+  align-items: center;                                                      /* Vertically centers the content */
+  font-size: 14.5px;                                                        /* Sets the font size to 14.5px */
+  margin: 0px 0 30px;                                                       /* Adds bottom margin of 30px */
+  text-shadow: 2px 2px 17px rgb(104, 149, 186);                           /* Adds a soft text shadow for visual effect */
+}
+
+.tos label input {
+  accent-color: #fff;                                                     /* Changes the color of the checkbox (input element) to white */
+  margin-right: 0px;                                                        /* Removes any right margin */
+}
+
+.tos a {
+  cursor: pointer;                                                          /* Changes the cursor to a pointer when hovering over the link */
+  position: relative;                                                       /* Positions the link relative to itself for further styling */
+  padding: 2px 5px 2px 5px;                                                 /* Adds padding inside the link */
+  border-radius: 5px;                                                       /* Rounds the corners of the link with a radius of 5px */
+  font-weight: 500;                                                         /* Sets the font weight to medium (500) */
+  transition: all 0.3s ease;                                                /* Smooth transition effect for all properties when hovered */
+  color: #fff;                                                            /* Sets the link text color to white */
+  text-decoration: none;                                                    /* Removes the default underline for links */
+  margin-left: auto;                                                        /* Automatically pushes the link to the right in its container */
+}
+
+.tos a:hover {
+  background: #c85090;                                                    /* Changes the background color to a pinkish hue when hovered */
+  outline: none;                                                            /* Removes any default outline (focus ring) */
+}
+
+.remember-forgot {
+  display: flex;                                                            /* Enables flexbox layout for the "Remember me/Forgot password" section */
+  align-items: center;                                                      /* Vertically centers the content */
+  font-size: 14.5px;                                                        /* Sets the font size to 14.5px */
+  margin-bottom: 20px;                                                      /* Adds 20px space below the section */
+  text-shadow: 2px 2px 17px rgb(104, 149, 186);                           /* Adds a soft blueish text shadow */
+  width: 100%;                                                              /* Ensures the section takes up the full width */
+  height: 40px;                                                             /* Sets the height of the section to 40px */
+}
+
+.remember-forgot input {
+  display: none;                                                            /* Hides the checkbox input visually, while still keeping it functional */
+}
+
+.remember-forgot label {
+  cursor: pointer;                                                          /* Changes the cursor to a pointer when hovering over the label */
+  position: relative;                                                       /* Positions the label relative to itself for further styling */
+  padding: 10px;                                                            /* Adds 10px padding inside the label */
+  border: 2px solid rgba(255, 255, 255, 0.2);                             /* Adds a light white border with some transparency */
+  border-radius: 15px;                                                      /* Rounds the corners of the label with a radius of 15px */
+  background-color: transparent;                                            /* Sets the background color to transparent */
+  transition: all 0.3s ease;                                                /* Smooth transition effect for all properties */
+}
+
+.remember-forgot label:hover,
+.remember-forgot input:checked + label:hover {
+  background: rgb(255, 255, 255);                                         /* Changes the background to white when hovered */
+  color: #50c8c4;                                                         /* Changes the text color to a teal shade when hovered */
+  outline: none;                                                            /* Removes the default outline (focus ring) */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);                          /* Adds a glowing shadow effect on hover */
+  transition: box-shadow 0.3s ease;                                         /* Smooth transition for the shadow effect */
+}
+
+.remember-forgot a {
+  cursor: pointer;                                                          /* Changes cursor to a pointer when hovering over the link */
+  position: relative;                                                       /* Positions the link relative to itself */
+  padding: 2px 5px 2px 5px;                                                 /* Adds 2px top and bottom, and 5px left and right padding inside the link */
+  border-radius: 5px;                                                       /* Rounds the corners of the link by 5px */
+  font-weight: 500;                                                         /* Sets the font weight to medium (500) */
+  transition: all 0.3s ease;                                                /* Smooth transition for all properties */
+  color: #fff;                                                            /* Sets the text color to white */
+  text-decoration: none;                                                    /* Removes the underline from the link */
+  margin-left: auto;                                                        /* Automatically shifts the link to the right within the flex container */
+}
+
+.remember-forgot a:hover {
+  background: #c85090;                                                    /* Changes the background color to pinkish (#c85090) when hovered */
+  outline: none;                                                            /* Removes any outline */
+}
+
+.remember-forgot input:checked + label {
+  background: #50c8c4;                                                    /* Changes background to teal when the checkbox is checked */
+}
+
+.wrapper .btn {
+  width: 100%;                                                              /* Button takes full width of the parent container */
+  height: 45px;                                                             /* Sets the button's height to 45px */
+  background: #fff;                                                       /* Button background color set to white */
+  border: none;                                                             /* Removes any border from the button */
+  outline: none;                                                            /* Removes any outline */
+  border-radius: 40px;                                                      /* Rounds the button corners by 40px */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);                                /* Adds a subtle shadow around the button */
+  cursor: pointer;                                                          /* Changes cursor to a pointer when hovering over the button */
+  font-size: 16px;                                                          /* Sets the button's font size to 16px */
+  color: #50c8c4;                                                         /* Button text color set to teal */
+  font-weight: 600;                                                         /* Sets the font weight to semi-bold */
+}
+
+.wrapper .btn:hover {
+  outline: none;                                                            /* Removes outline on hover */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);                          /* Adds a glowing white shadow effect on hover */
+  transition: box-shadow 0.3s ease;                                         /* Smooth transition for the box-shadow effect */
+}
+
+.wrapper .register-link {
+  font-size: 14.5px;                                                        /* Sets the font size to 14.5px */
+  text-align: center;                                                       /* Centers the text */
+  margin: 20px 0 15px;                                                      /* Adds margins: 20px top, 0px sides, 15px bottom */
+  text-shadow: 2px 2px 17px rgba(139, 181, 215, 0.709);                   /* Adds a light blueish text shadow */
+}
+
+.register-link p {
+  margin-top: 10px;                                                         /* Adds 10px space above the paragraph inside the register link */
+}
+
+.register-link p a {
+  color: #fff;                                                            /* Sets the link text color to white */
+  text-decoration: none;                                                    /* Removes the underline from the link */
+  font-weight: 600;                                                         /* Sets the font weight to semi-bold */
+  margin-left: 10px;                                                        /* Adds a 10px margin to the left of the link */
+  padding: 2px 5px 2px 5px;                                                 /* Adds 2px padding to the top and bottom, and 5px to the left and right */
+}
+
+.register-link p a:hover {
+  background: #50c8c4;                                                    /* Changes the background color to teal when hovered */
+  border-radius: 5px;                                                       /* Rounds the corners of the link by 5px when hovered */
+}
+
+.copyright {
+  text-align: center;                                                       /* Centers the text */
+  margin-top: 20px;                                                         /* Adds 20px space above the copyright text */
+  font-size: 10px;                                                          /* Sets the font size to 10px */
+  text-shadow: 2px 2px 17px rgba(134, 95, 28, 0.821);                     /* Adds a bronze-colored shadow to the text */
+  user-select: none;                                                        /* Prevents the user from selecting the text */
+}

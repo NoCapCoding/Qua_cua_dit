@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+
+        .label-focus {
+            transition: all 0.3s ease;
+        }
+
+        .input-focus:focus ~ .label-focus,
+        .input-focus:valid ~ .label-focus {
+            top: -10px;
+            font-size: 0.875rem; /* Tailwind's text-sm */
+            color: #4158d0; /* Tailwind's blue-500 */
+            background: white; /* Light mode background */
+            padding: 0 4px; /* Add padding for better readability */
+            z-index: 10; /* Ensure the label is above the input */
+        }
+
+        /* Dark mode styles */
+        .dark-mode .input-focus:focus ~ .label-focus,
+        .dark-mode .input-focus:valid ~ .label-focus {
+            background: #2d3748; /* Tailwind's gray-700 */
+            color: #f7fafc; /* Tailwind's gray-100 */
+        }
+
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dark-mode {
+            background-color: #1a202c; /* Tailwind's gray-800 */
+            color: #f7fafc; /* Tailwind's gray-100 */
+        }
+
+        .dark-mode .bg-white {
+            background-color: #2d3748; /* Tailwind's gray-700 */
+        }
+
+        .dark-mode .text-gray-500 {
+            color: #e2e8f0; /* Tailwind's gray-300 */
+        }
+
+        .dark-mode .text-gray-700 {
+            color: #cbd5e0; /* Tailwind's gray-400 */
+        }
+
+        .input-focus {
+            transition: border-color 0.3s ease;
+        }
+
+        .input-focus:focus {
+            border-color: #4158d0; /* Tailwind's blue-500 */
+            box-shadow: 0 0 0 2px rgba(65, 88, 208, 0.5); /* Subtle shadow effect */
+        }
+
+        /* Dark mode styles for input fields */
+        .input-focus {
+            background-color: #edf2f7; /* Tailwind's gray-200 */
+            color: #2d3748; /* Tailwind's gray-700 */
+        }
+
+        .dark-mode .input-focus {
+            background-color: #2d3748; /* Tailwind's gray-700 */
+            color: #f7fafc; /* Tailwind's gray-100 */
+        }
+
+        .dark-mode .text-blue-500 {
+            color: #63b3ed; /* Tailwind's blue-300 */
+        }
+    </style>
+</head>
+
+<body class="flex items-center justify-center h-screen bg-gray-100 font-poppins">
+    <div class="w-full max-w-md bg-white rounded-lg shadow-lg p-8">
+        <div class="flex justify-between items-center mb-6">
+            <div class="text-center text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
+                Login
+            </div>
+            <button id="darkModeToggle" class="flex items-center text-gray-700 hover:text-blue-500">
+                <i id="toggleIcon" class="fas fa-sun"></i>
+            </button>
+        </div>
+
+        <form id="loginForm" action="login.php" method="POST">
+            <div class="relative mb-6">
+                <input type="text" id="username" name="username" required
+                    class="input-focus w-full h-12 px-4 border border-gray-300 rounded-lg focus:outline-none"
+                    placeholder=" ">
+                <label for="username" class="label-focus absolute left-4 top-2 text-gray-500 transition-all duration-300">Username</label>
+            </div>
+            <div class="relative mb-6">
+                <input type="password" id="password" name="password" required
+                    class="input-focus w-full h-12 px-4 border border-gray-300 rounded-lg focus:outline-none"
+                    placeholder=" ">
+                <label for="password" class="label-focus absolute left-4 top-2 text-gray-500 transition-all duration-300">Password</label>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center">
+                    <input type="checkbox" id="remember-me" name="rememberMe" class="mr-2 text-blue-500 focus:ring-blue-500">
+                    <label for="remember-me" class="text-gray-700 dark:text-gray-300">Remember me</label>
+                </div>
+            </div>
+            <div class="mb-4">
+                <button type="submit"
+                    class="w-full h-12 text-white font-medium rounded-lg bg-gradient-to-r from-purple-500 to-blue-500 hover:scale-95 transition-transform duration-300 cursor-pointer shadow-lg hover:shadow-xl">
+                    Login
+                </button>
+            </div>
+            <div id="errorMessage" class="text-red-500 text-center mb-4 hidden"></div>
+            <div class="text-center">
+                Not a member? <a href="register.html" class="text-blue-500 hover:underline">Register</a>
+            </div>
+            <div class="text-center mt-4">
+                <span class="text-gray-500">&copy; Gino Santos</span>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const params = new URLSearchParams(window.location.search);
+            const errorMessage = document.getElementById('errorMessage');
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const toggleIcon = document.getElementById('toggleIcon');
+            const body = document.body;
+
+            if (params.has('error') && params.get('error') === '1') {
+                errorMessage.textContent = "Invalid username or password.";
+                errorMessage.classList.remove('hidden');
+            }
+
+            darkModeToggle.addEventListener('click', function () {
+                body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    toggleIcon.classList.remove('fa-sun');
+                    toggleIcon.classList.add('fa-moon');
+                    darkModeToggle.querySelector('span').textContent = 'Toggle Light Mode';
+                } else {
+                    toggleIcon.classList.remove('fa-moon');
+                    toggleIcon.classList.add('fa-sun');
+                    darkModeToggle.querySelector('span').textContent = 'Toggle Dark Mode';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
